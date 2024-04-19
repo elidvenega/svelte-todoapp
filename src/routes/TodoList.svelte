@@ -5,7 +5,7 @@
     { task: "Go Hiking", status: false },
     { task: "Groceries", status: false },
     { task: "Washing", status: false },
-    { task: "Study", status: false },
+    { task: "Study", status: false }
   ];
 
   function addTodo() {
@@ -84,7 +84,10 @@
     color: var(--white-color);
     padding: 10px;
   }
-
+  
+  span {
+    font-size: 1.2rem;
+  }
   /* .add-todo-button {
     width: 4rem;
   } */
