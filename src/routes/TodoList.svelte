@@ -1,16 +1,16 @@
 <script>
-  let newItem = "";
+  let newTask = "";
 
   let todoList = [
     { task: "Go Hiking", status: false },
     { task: "Groceries", status: false },
     { task: "Washing", status: false },
-    { task: "Study", status: false }
+    { task: "Study", status: false },
   ];
 
   function addTodo() {
-    todoList = [...todoList, { task: newItem, status: false }];
-    newItem = "";
+    todoList = [...todoList, { task: newTask, status: false }];
+    newTask = "";
   }
 
   function deleteTodo(index) {
@@ -22,7 +22,7 @@
 <h1>Svelte Todo List</h1>
 <div class="todo-list-container">
   <input
-    bind:value={newItem}
+    bind:value={newTask}
     class="input"
     placeholder="Add todo"
     type="text"
@@ -36,7 +36,7 @@
       <span class:checked={item.status}>{item.task}</span>
       <!-- svelte-ignore a11y-click-events-have-key-events -->
       <!-- svelte-ignore a11y-no-static-element-interactions -->
-      <span class="delete-button" on:click={() => deleteTodo(index)}>❌</span>
+      <span class="delete" on:click={() => deleteTodo(index)}>❌</span>
     </div>
   {/each}
 </div>
@@ -74,7 +74,7 @@
     text-decoration: line-through;
   }
 
-  .delete-button {
+  .delete {
     cursor: pointer;
   }
 
@@ -84,7 +84,7 @@
     color: var(--white-color);
     padding: 10px;
   }
-  
+
   span {
     font-size: 1.2rem;
   }
